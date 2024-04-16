@@ -1,0 +1,694 @@
+	/*
+		test_05
+*/
+
+/* -------------- общее оформление  ---------------------------------- */
+
+
+body {
+	color: #000;
+    font: 13px/18px HelveticaNeue, Helvetica, Arial, sans-serif;
+	display: block; 
+	background-color: #fff;
+	margin: 0;
+}
+
+	
+#em {
+	display: none; 
+	position: fixed;
+	height: 1em;
+	width:  1em;
+	margin:  0;
+	padding: 0;
+}
+
+
+#all {
+	display: block; 
+	position: fixed;
+	height: 100%;
+	width:  100%;
+}
+
+
+#all #showLoad {
+	display: block; /*noneblock;*/
+	position: absolute;
+	width: 99%;
+	height: 99%;
+	background: url('/sup/aniload.gif') no-repeat center center;
+	z-index: 111;
+}
+
+#all #showLoad.hide {
+	display: none;
+	z-index: -11;
+}
+
+
+
+#work_zone {
+	display: block; 
+	position: fixed;
+	top: 3em;
+	left: 0;
+	right: 0;
+	width:  100%;
+	bottom: 0.5em;
+}
+
+#header,
+#work_zone,
+#bb,
+#bot {
+	position: fixed;
+}
+
+#nav,
+#work,
+#buf,
+#nw,
+#nw_gr,
+#wb,
+#dgn {
+	position: absolute;
+}
+
+#header #image_box ,
+#header #re_data ,
+#header #vh {
+	display: block; 
+	position: fixed;
+	top: 0.5em;
+	right: 1.5em;
+	height: 1.4em;
+	min-width:  1.5em;
+	color: #fca;
+	border: 2px solid #fca; 
+	background-color: #631;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#header #re_data{
+	right: 5.5em;
+}
+
+#header #image_box{
+	right: 11em;
+}
+
+#nav .reg_menu,
+#work .reg_menu {
+	white-space: nowrap; 
+	overflow:hidden;
+}
+
+#header { 
+	top: 1em;
+	left: 1em;
+	right: 1em;
+	height: 2em; 
+}
+
+#nav,
+#nw,
+#nw_gr,
+#work,
+#wb {
+	top: 0em;
+	bottom: 0em;	
+    font: 13px/22.5px HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+
+#nw,
+#nw_gr,
+#wb,
+#bb,
+#navW,
+#workW,
+#bufW {
+	-webkit-box-shadow: 2px 3px 4px 0px #642;
+	box-shadow: 2px 3px 4px 0px #642;
+}
+
+
+#nav.vert,
+#nav	{ 
+	left: 0;
+/*	width: 376px; */
+	width: 50%;
+}
+
+#nw { 
+/*	left: 378px; */
+	left: 50.25%; 
+}
+
+#work.vert,
+#work	{ 
+/*	left:  378px; */
+	left:  50.4%;
+	right: 5px;
+}
+
+
+#work_zone.grznt #nav,	 
+#work_zone.grznt #nw_gr, 
+#work_zone.grznt #work	{ 
+	left:  0em;
+	right: 0em;
+	width: 99%;
+}
+
+
+#work_zone.grznt #nav	{ 
+	top: 0em;
+	height: 50%; 
+/*	height: 10%;*/
+}
+#work_zone.grznt #nw_gr	{ 
+	top: 50%; 
+/*	top: 10%; */
+	height: 2px;
+	left: 3px;
+}
+#work_zone.grznt #work	{ 
+	top: 50.7%; 
+/*	top: 10.7%; */
+	bottom: 0.5em;
+}
+
+#work_zone.grznt #nw_gr	{ display: block }
+#work_zone.grznt #nw	{ display: none }
+#work_zone #nw_gr	{ display: none }
+
+/*
+#work_zone #nw	{ display: none }
+*/
+
+
+#dgn	{ 			/* служебная область  */
+	bottom: 0.5em;
+	top: 0.5em; 
+	left: 0.5em;
+	width: 16em;
+	border: 0px solid #333; 
+	margin: 0em;
+	padding: 0.5em;
+}
+
+#cntxMenu { /* контекстное меню */
+	display: none;
+	position: absolute;
+	z-index: 20;
+	padding: 1.1em;
+	margin: 0.5em;
+	border: 1px solid #333;
+	background: #fff;
+}
+
+#cntxMenu{
+	-webkit-box-shadow: 5px 5px 5px 0px #777;
+	box-shadow: 5px 5px 5px 0px #777;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;		
+}
+
+
+#header,
+#nav,
+#work {
+	margin: 0;
+	padding: 0;
+}
+#header {
+	color: #000;
+	font-weight: bold;
+}	
+
+#navW,
+#workW {
+	display: block;
+	position: absolute;
+	z-index: 10;
+	top: 0em;
+	bottom: 0.2em;
+	left: 0.5em;
+	right: 0.1em;
+	padding: 0.5em;
+}	
+
+
+#navW {
+	padding-top: 0;
+}
+
+#workW { right: 0.23em; }
+
+#navW,
+#workW {
+	border: 1px solid #000; 
+	background-color: #fff; 
+/* 	background-image: url("bckg.jpg") ; */
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+/*#navW {
+	background-image: url("derevo.jpg") ;
+	background-size: cover;
+}*/
+
+
+#navW,
+#workW {
+}
+
+#navW {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* ----------------  "регуляторы окон" ------------------------------*/
+#nw_gr,
+#nw {
+	border: 1px solid #fca; 
+	background-color: #fca;
+	z-index: 15;	
+}
+
+#nw { width: 1px; }
+
+#nw_gr:hover,
+#nw:hover {
+	background-color: #fa5 ; 	
+	border-color: #fa5 ;	
+}
+
+#nw:hover {	cursor: e-resize ; }
+#nw_gr:hover {	cursor: n-resize ; }
+
+/* ----------------  "регуляторы окон" ---------------------------END*/
+
+
+/* -------------- общее оформление  -------------------------------END */
+
+
+/* -------------- оформление информации  ----------------------------- */
+
+
+#workC a { 
+	display: inline-block;
+}
+
+a:hover { 
+	cursor: pointer; 
+	background: #f7f7f7;
+}
+
+a[type="DIR"] {	font-weight: bold; }
+.rightClick  { background: #eee }
+
+
+/*a.node:hover { background: #cce; }
+
+/* -------------- оформление "дерева"  ------------------------------- */
+
+.db_node,
+.tree_node {
+	position: relative;
+	margin-left: 1em;
+	padding-left: 0.5em;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.tree_node {
+	display: none;
+}
+
+.tree_node:hover a:first-child {
+	background: #eee;
+}
+	
+.db_node a {
+	color: #557;
+}	
+
+.db_crn a ,
+.db_node a ,
+.tree_node a {
+	display: inline-block;
+	width: 100%;
+	padding-left: 0.1em;
+	vertical-align: 10%;
+	font-weight: bold;
+}
+
+.mark_clop{
+	display: inline-block;
+	cursor: pointer ;
+	font-size: 1.2em;
+}	
+
+.mark_clop:before {
+	content: '\2610';
+	color: #1a4;
+}
+
+
+
+
+#nav[reg='db'] #navW {
+	padding-top: 1em;
+}
+	
+
+#nav[view='db'] .mark_clop:before,
+#nav[reg='db'] .mark_clop:before {
+	content: '\22A5';
+	color: #1a4;
+}
+
+#nav #navW .crn.tree_node  { 
+	display: block;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#work[reg="file"][view="tile"] a:hover { 
+	background: inherit;
+}
+
+
+#work[reg='db'] #workW {
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+/*#nav #navW div
+*/
+.tree_node:first-child  { 
+
+}
+/*
+.tree_node { display: none;  }
+*/
+
+.tree_node.open>.tree_node, 
+.tree_node[level='0'] { 
+	display: block; 
+	color: #151 ;
+}
+
+.tree_node[parent='yes']>.mark_clop:before { content: '\2611'; }
+.tree_node.open>.mark_clop:before { content: '\2612'; }
+
+.tree_node[parent='yes']>a { 
+	color: #721;
+ }
+
+.db_crn.curent > a ,
+.db_node.curent > a ,
+.tree_node.curent > a { 
+	background: #efe;
+ }
+
+/* -------------- оформление "дерева"  ----------------------------END */
+
+
+/* -------------- оформление "рабочей области"  ---------------------- */
+
+
+#work a {
+}
+
+#workW {
+	padding-top: 0;
+}
+
+#workW .del {
+	font-weight: bold;
+	font-size: 1.4em;
+}	
+
+#workW #path {
+	display: block;
+	position: absolute;
+}
+	
+#navW .db_crn,
+#workW #path {
+	width: 99%;
+	height: 1.95em;
+	margin-top: 0.5em;
+	margin-left: 0.5em;
+}	
+#workW a.path {
+	color: #777;
+}
+
+#workW a.path:first-child {
+	margin-left: 0.2em;
+}
+
+#workW .wrk{
+	display: block;
+	position: absolute;
+	left: 0.5em;
+	right:0.5em;
+	top: 3.15em;
+	bottom: 0.5em;	
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+	
+#workW a.last.path {
+	cursor: default;
+}	
+
+#work[view='tabl'] .wrk .node {
+	display: flex;
+	flex-flow: row nowrap;
+	align-content: flex-start;
+	max-width: 33em;
+}
+#work[view='tabl'] .wrk .node span {
+	
+}	
+#work[view='tabl'] .wrk .node span.name {
+	flex: 12 6 12em;
+}
+
+#work[view='tabl'] .wrk .node span.parDop {
+	flex: 5 4 5em;
+	display: inline-block;
+/*	width: 11em; */
+	text-align: right;
+}
+
+#work[view='tabl'] .wrk .node span.first,
+#work[view='tabl'] .wrk .node span.last {
+	flex: 1 0 0em;
+}
+
+	
+#work[view='tabl'] .wrk .node span.parDop.icon {
+	display: none;
+}
+
+#work[view='list'] .parDop ,
+#work[view='tile'] .parDop {
+	display: none;
+}
+
+
+#work[view='list'] .wrk{
+	display: flex;
+	flex-flow: column wrap;
+	align-content: flex-start;
+	overflow-x: auto;
+}
+#work[view='list'] .node {
+	margin-left: 2.3em;
+	padding: 0.1em;
+	width: 11em;
+}
+
+#work[view='list'] #path .path {
+	margin-left: 0.51em;
+	padding: 0.1em;
+	width: 11em;
+}
+
+#work[view='list'] .node .name {
+	white-space: nowrap;
+}
+
+#work[view='tile'] .wrk {
+	display: block;
+	vertical-align: top;
+}
+
+#work[view='tile'] .wrk span {
+	display: none;
+	white-space: normal; 		
+}	
+
+#work[view='tile'] .wrk .node {
+	display: inline-block;	
+	vertical-align: top;
+	width: 7em;
+	height: 9em;
+	margin: 1em;
+	padding: 1em;
+	white-space: normal; 
+}
+
+#work[view='tile'] .wrk .node .icon {
+	display: block;
+	width: 100%;
+	height: 80%;
+	line-height: 450%; 
+/*	vertical-align: bottom;*/
+	text-align: right;
+	font-size: 2.5em;
+	color: #db66;
+	border: 1px solid #963;
+	background: #eda;
+	background-size: cover; /* contain cover */
+	background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#work[view='tile'] .wrk .node .icon {
+	-webkit-box-shadow: 2px 3px 4px 0px #111;
+	box-shadow: 1px 1px 2px 0px #111;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;		
+}
+
+	
+#work[view='tile'] .wrk .node[type='DIR'] .icon {
+	border-right: 2px solid #963;	
+	border-bottom: 2px solid #963;	
+	-webkit-box-shadow: 2px 3px 4px 0px #111;
+	box-shadow: 2px 2px 5px 0px #111;
+}
+
+#work[view='tile'] .wrk .node:hover .icon {
+	box-shadow: 2px 2px 5px 0px #111;
+}
+
+#work[view='tile'] .wrk .node .name {
+	display: block;
+	margin-top: 0.25em;
+	word-break: break-all;
+}
+
+
+#workW .tbl {
+    display: table;
+	margin-top: 1.1em;
+	border-collapse: collapse;
+}
+
+#workW .tbl .tr {
+    display: table-row;
+}
+#workW .tbl .tr.keys {
+	font-weight: bold;
+}	
+
+#workW .tbl .tr .td {
+    display: table-cell;
+	text-align: center;
+	border: 1px solid #999;
+	padding: 0.35em 0.71em;
+	max-width: 33em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#workW .tbl .tr .td[name='text'],
+#workW .tbl .tr .td.long_txt {
+	text-align: left;
+}
+
+/* --------------------------------------- */
+
+#cllcZ,
+#showZ{
+	display: none;
+	position: absolute;
+	z-index: 33;
+	width:  99%;
+	height: 99%;
+}
+
+#cllcZ.show,
+#showZ.show {
+	display: block;	
+}
+	
+#cllcZo,
+#showZo{
+	display: flex;
+	width:  100%;
+	height: 100%;
+	background: rgba( 22, 22, 22, 0.75);
+	background-color: rgba( 22, 22, 22, 0.75);
+}
+
+#cllcZ #cllcZone,
+#showZ #showZone{
+	max-width: 90%;
+	max-height: 90%;
+	margin: auto;
+}
+
+#cllcZ #cllcZone * ,
+#showZ #showZone * {
+/*	max-width:  100%;
+	max-height: 100%; */
+}
+
+#cllcZ #cllcZone[type='txt'] ,
+#showZ #showZone[type='txt'] {
+	padding: 2em;
+	overflow-x: auto;
+	overflow-y: auto;
+	background: #fff ;
+	border: 2px groove #333;
+}
+
+#cllcZ #cllcZone[type='video'] video,
+#cllcZ #cllcZone[type='img'] img,
+#showZ #showZone[type='video'] video,
+#showZ #showZone[type='img'] img{
+	border: 7px groove #333;
+	border-left-color: #777;
+	border-top-color:  #777;
+}
+
+
+#cllcZ #cllcZone[type='pdf'] ,
+#showZ #showZone[type='pdf'] {
+	width:  100%;
+	height: 100%;
+}
+
+#cllcZ #cllcZone[type='pdf'] object ,
+#showZ #showZone[type='pdf'] object {
+	width:  100%;
+	height: 100%;
+}
+
+
+

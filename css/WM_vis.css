@@ -1,0 +1,346 @@
+
+      #mynetwork {
+		display: block;
+		position: absolute;
+		top: 0%;
+		bottom: 0%;
+		right: 0%;
+		left: 0%;
+        border: 0px solid #631;
+    }
+	  
+    #textwork {
+		display: flex;
+		position: absolute;
+		top: 1%;
+		bottom: 1%;
+		right: 1%;
+		left: 1%;
+		color: #000;
+    }
+	
+    #textwork .info_block {
+        border: 2px solid #111;
+		margin: 1%;
+		padding: 2%;
+        width:  46%;
+		overflow-y: auto;
+	}
+	
+    #textwork hr {
+		border: 0;
+		border-top: ;
+	}
+
+    #main {
+		display: block;
+		top: 0;
+		right:  0.25em;
+        left:   0.25em;
+        bottom: 0.25em;
+		overflow-y: auto;
+    }
+
+	#showZone figure,
+	#cllcZone figure,
+	#image_top figure.image,
+	#image img, 
+	#parents figure.no_image, 
+	#childs figure.no_image, 
+	#picts figure.no_image, 
+	#picts figure.collections, 
+	#picts figure.video, 
+	#picts figure.image ,
+	#family figure,
+    #show_image figcaption,
+    #main #title {
+		cursor: pointer; 
+	}
+	
+	figure.no_image {		
+		margin: 0.1em 1em;
+	}
+
+	#lifeyears {
+		font-weight: bold;
+		font-style: underline;
+	}
+	
+	#text {
+		display: inline;
+		overflow-y: auto;
+      }	  
+
+      #imgs {
+ 		display: block;
+		float: left;
+        width:  300px;
+        height: 100%;
+        border: 0px solid #fff;
+		margin-right: 1.5em ;
+		margin-bottom: 1em ;
+	  }
+
+ /*   img {
+        object-fit: cover;
+	}
+*/	  
+      #image_top {
+		display: block;
+        width:  222px;
+        border: 1px solid #fff;
+	 }
+	 
+     #image_top img, 
+     #image img {
+		border: 1px solid #642;
+        width: 100%;
+        height: 100%;
+	  }	 
+	  
+      #image {
+		display: inline-block;
+		float: left;
+        width:  302px;
+		margin: 10px 2em 15px 10px;
+	  }
+
+	/*	float: left; */
+     #info {
+		display: block;
+		padding-bottom: 1.5em;
+		border: 0px solid #642;
+		overflow-y: auto;
+	  }	 
+	  
+    #info #childs {
+		display: block;
+		margin-top: 0.7em
+	}	 
+
+	 #show_image {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+        width:  99%;
+        height: 99%;
+		vertical-align: middle;
+        border: 3px solid #333;
+		margin-bottom: 1em ;
+		background: rgba( 64,33,3, 0.9);
+		z-index: 99;
+
+	 }	
+
+	 #show_image.show {
+		display: flex;	 
+		justify-content: center;
+		align-items: center;
+	 }	
+	 
+    #show_image  figure {
+		display: flex;	 
+		flex-direction: column;
+ 		justify-content: center;
+		align-items: center;
+        width: 97%;
+		position: absolute;
+        height: 97%;
+	}
+	
+    #show_image  figcaption {
+		font: 24px/36px Helvetica,Arial,sans-serif;
+		color: #fca;
+		margin: 0.1em ;
+		text-align: center;
+	}
+	
+    #show_image  img {
+		display: block;
+		object-fit: contain;
+		border: 15px inset #940;
+        max-width: 95%;
+        max-height: 90%;
+		padding: 0;
+	}	 
+
+    div.close,	
+    #show_image #left,	
+    #show_image #right {
+		display: block;
+		position: absolute;
+		width: 0.82em;
+		right: 0.51em;
+		top: 50%;
+		color: #fca;
+		font-size: 3em;
+		z-index: 22;
+		cursor: pointer;
+	}
+	
+    #show_image #left{	
+		left: 0.51em;
+	}
+	
+    div.close{	
+		top: 0.51em;
+		right: 0.51em;
+		font-size: 2em;
+		border: 0.1em solid #fca;
+		line-height: 0.81em; 
+	}
+
+
+      #picts {
+     }	
+
+	 #image_top figure.image,
+	 #picts figure.image {
+/*		 border: 0px solid #642;
+		float: left;    /*  */
+	 }
+
+	
+	figure figcaption {
+		width: 100%;
+		margin-top: 0.75em;
+		text-align: center;
+		line-height: 1.3em;
+	}
+	
+	figure.image {
+		max-width: 150px;
+		margin: 20px;
+	}
+
+	figure.image img {
+		max-height: 80%;
+		max-width: 80%;
+	}
+
+	figure.collections {
+		max-width: 150px;
+		margin: 20px;
+		padding: 15px 0;
+		border: 2px solid #999;
+	}
+
+	figure.collections img {
+		max-height: 80%;
+		max-width: 80%;
+	}
+
+	#showZo:has( #showZone[ group=collection ] ) ,
+	#cllcZo:has( #cllcZone[ group=collection ] ) {
+		background: 		rgba( 252, 252, 252, 0.9 );
+		background-color: 	rgba( 252, 252, 252, 0.9 );
+	}
+
+	#showZ #showZo:has( #showZone[ group=collection ] ) .close ,
+	#cllcZ #cllcZo:has( #cllcZone[ group=collection ] ) .close {
+		color: #631;
+		border-color: #631;
+	}
+
+	#showZ #showZo #showZone ,
+	#cllcZ #cllcZo #cllcZone {
+		display: flex;
+		align-content: start;
+		justify-content: flex-between;
+		flex-wrap: wrap;
+		gap: 1.5em;
+	}
+
+	#showZ #showZo #showZone h3,
+	#showZ #showZo #showZone h4,
+	#cllcZ #cllcZo #cllcZone h3,
+	#cllcZ #cllcZo #cllcZone h4{
+		width: 91%;
+		margin: 0 0 ;
+	}
+,
+	
+	#showZ #showZo #showZone[ group=collection ],
+	#cllcZ #cllcZo #cllcZone[ group=collection ]{
+		margin: 3.3em 0 1em auto;
+		overflow-y: auto;
+		max-width: 95%;
+		max-height: 95%;	
+	}	
+
+	#showZ #showZo #showZone[ group=collection ] figure,
+	#cllcZ #cllcZo #cllcZone[ group=collection ] figure,
+	#image_top .image,
+	#picts .collections,
+	#picts .video,
+	#picts .image {
+		display: inline-block;
+		position: relative;
+		width: 150px; 
+/*		height: 185px;
+		background-color: #f1e2d3;
+		border: 2px solid #642;
+/* */	margin:   6px;
+		padding: 12px;
+		background:		  rgba( 252, 252, 252, 0.7 );
+		background-color: rgba( 252, 252, 252, 0.7 );		
+	}
+	
+	#showZ #showZo #showZone[ group=collection ] figure ,
+	#cllcZ #cllcZo #cllcZone[ group=collection ] figure {
+		z-index: 44;
+		background:		  rgba( 252, 252, 252, 0.7 );
+		background-color: rgba( 252, 252, 252, 0.7 );
+	}
+	
+	#parents .no_image ,
+	#childs .no_image ,
+	#picts .no_image {
+		display: list-item;
+		position: relative;
+		max-width: 80%; 
+		
+	}
+
+	#anons .anons_add,
+	#family, 
+	#parents, 
+	#childs {
+		display: flex;
+		flex-wrap:  wrap ;
+	}
+	
+	#parents figure, 
+	#childs figure {
+	}
+	
+	#anons .anons_add,
+	#family {
+		border: 2px solid #999;
+	}
+	
+	#anons .anons_add {
+		margin: 1em 0;
+		padding: 0.5em 1em;
+		cursor: pointer;
+	}	
+	
+    #showZone[ group=collection ] img,
+    #cllcZone[ group=collection ] img,
+	#image_top img,
+    #family img,
+    #picts img {
+		display: block;
+		float: center;
+		bottom: 23px;		
+		border: 1px solid #642;
+		margin: auto;
+        max-width:  138px;
+        max-height: 150px;
+		overflow-x: auto;
+	  }	  
+	  
+   
+
+	  
