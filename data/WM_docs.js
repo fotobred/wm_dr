@@ -167,8 +167,26 @@
 			source: "https://biographe.ru/politiki/nikolaj-1/",
 			source_title: "biographe.ru",
 			file: DIR_docs + "romanovy/НиколайI/НиколайI.pdf"			
-		},		
+		},	
 		
+		
+		"АлександраПавловна":  { id:  27, 
+			label: "АлександраПавловна",
+			title: "Биография старшей дочери Павла I, княжны Александры Павловны Романовой",
+			type: "pdf",
+			source: "",
+			source_title: "diletant.media",
+			file: DIR_docs + "romanovy/АлександраПавловна/АлександраПавловна.pdf"			
+		},
+		
+		"Николай1856":  { id:  28, 
+			label: "Николай1856",
+			title: "Великий князь Николай Николаевич Романов",
+			type: "pdf",
+			source: "https://ria.ru/20170201/1486462738.html",
+			source_title: "ria.ru",
+			file: DIR_docs + "romanovy/Николай1856/Николай1856.pdf"			
+		},		
 		
 		"":  { id:  11, 
 			label: "",
